@@ -1,0 +1,9 @@
+<p><%= link_to 'Back', bookmarks_path %></p>
+
+<% @friends.each do |friend| %>
+
+	<div class="friend">
+		<%= friend.email %> <%= link_to 'Bookmarks', friendship_path(friend) %>
+	</div>
+
+<% end %>

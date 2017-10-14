@@ -1,0 +1,24 @@
+<%= link_to 'Logout', logout_path %> <%= link_to 'Friends', friends_path %>
+
+<p id = "error_message"><%= flash[:error] %></p>
+
+<%= render 'form', new_bookmark: new_bookmark %>
+<%= render 'find_bookmark_form' %>
+<button id = "reset_find_bookmark_form">Reset</button>
+
+<div id = "bookmarks">
+	<% if @bookmarks.size.zero? %>
+		<div>No one bookmarks found!</div>
+	<% else %>
+		<% @bookmarks.each do |bookmark| %>
+
+			<div class="bookmark">
+				<div class="bookmark_url"><%= link_to bookmark.url, bookmark.url %></div>
+				<div class="bookmark_image"><%= image_tag(bookmark.preview) %></div>
+			</div>
+
+		<% end %>
+	<% end %>
+</div>
+
+<%= will_paginate @bookmarks %>

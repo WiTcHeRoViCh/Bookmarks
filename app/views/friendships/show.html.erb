@@ -1,0 +1,19 @@
+<p><%= link_to 'Back', friends_path %></p>
+
+<p><%= @current_friend.email %></p>
+
+<%= render 'find_friend_bookmark' %>
+<button id = "reset_find_bookmark_form">Reset</button>
+
+<div id="bookmarks">
+	<% @bookmarks.each do |bookmark| %>
+
+		<div class="bookmark">
+			<div class="bookmark_url"><%= link_to bookmark.url, bookmark.url %></div>
+			<div class="bookmark_image"><%= image_tag(bookmark.preview) %></div>
+		</div>
+
+	<% end %>
+</div>
+
+<%= will_paginate @bookmarks %>

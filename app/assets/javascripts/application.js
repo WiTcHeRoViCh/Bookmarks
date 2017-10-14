@@ -11,5 +11,13 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
 //= require_tree .
+
+window.onload = function () {
+	reset_find_bookmark_btn = document.getElementById('reset_find_bookmark_form')
+
+	reset_find_bookmark_btn.onclick = function() {
+		document.getElementById('search').value ='';
+		document.getElementById('find_bookmark_submit').click();
+	}
+};
