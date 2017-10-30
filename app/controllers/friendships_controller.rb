@@ -8,7 +8,7 @@ class FriendshipsController < ApplicationController
 
 	def show
 		current_friend_bookmarks = @current_friend.bookmarks.search(params[:search], @current_friend.id)
-		@bookmarks = current_friend_bookmarks.paginate(:page => params[:page], :per_page => 3)
+		@bookmarks = current_friend_bookmarks.paginate(:page => current_page(params[:page]), :per_page => per_page)
 	end
 
 	private

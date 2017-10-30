@@ -1,6 +1,4 @@
 $:.unshift File.dirname(__FILE__) + '/../lib'
-require 'screencap'
-require 'link_thumbnailer'
 require 'fastimage'
 
 TMP_DIRECTORY = "/tmp/spec/"

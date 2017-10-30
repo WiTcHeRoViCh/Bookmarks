@@ -1,6 +1,6 @@
 <% if current_user %>
-	<%= link_to 'Bookmarks', bookmarks_path %>
-	<%= link_to 'Logout', logout_path %>
+	<div id="top_menu_left"><%= link_to 'Bookmarks', bookmarks_path %></div>
+	<div class="top_menu_middle"><%= link_to 'Logout', logout_path, class: "top_menu_middle_link" %></div>
 <% else %>
-	<%= link_to "Facebook", '/auth/facebook' %>
+	<div id="top_menu_left"><%= link_to "Facebook", '/auth/facebook' %></div>
 <% end %>

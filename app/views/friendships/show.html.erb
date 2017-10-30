@@ -1,19 +1,29 @@
-<p><%= link_to 'Back', friends_path %></p>
+<div id="top_menu_left">
+	<%= link_to "Back", friends_path %> 
+</div>
 
-<p><%= @current_friend.email %></p>
+<div id="user_email_parrent"><span class="user_email_middle_top"><%= @current_friend.email %></span></div>
 
-<%= render 'find_friend_bookmark' %>
-<button id = "reset_find_bookmark_form">Reset</button>
+<p id = "find_friend_bookmark_indent">
+	<div class="horizontal_center">
+		<%= render 'find_friend_bookmark' %>
+	</div>
 
 <div id="bookmarks">
-	<% @bookmarks.each do |bookmark| %>
+	<% if @bookmarks.size.zero? %>
+		<div>No one bookmarks found!</div>
+	<% else %>
+		<% @bookmarks.each do |bookmark| %>
 
-		<div class="bookmark">
-			<div class="bookmark_url"><%= link_to bookmark.url, bookmark.url %></div>
-			<div class="bookmark_image"><%= image_tag(bookmark.preview) %></div>
-		</div>
+			<div class="bookmark">
+				<div class="bookmark_image"><%= show_image(bookmark.preview) %></div>
+				<div class="bookmark_url"><%= link_to bookmark.url, bookmark.url %></div>
+			</div>
 
+		<% end %>
 	<% end %>
 </div>
 
-<%= will_paginate @bookmarks %>
+<div class = "apple_pagination">
+	<%= will_paginate @bookmarks, :container => false %>
+</div>

@@ -1,0 +1,48 @@
+#friends {
+	margin-top: 25px;
+	margin-left: 20px;
+}
+
+.friend {
+	margin-left: 20px;
+	margin-top: 35px;
+	font-size: 18px;
+}
+
+.user_email {
+	background: #dedee6;
+	padding: 10px 16px;
+	border-radius: 20px;
+	color: #002b5c;
+}
+
+#user_email_parrent {
+	margin-left: 35px;
+	display: inline-table;
+}
+
+.user_email_middle_top {
+	background: #dedee6;
+	padding: 11px 16px;
+	border-radius: 0 0 20px 20px;
+	color: #0b0871;
+	font-size: 18px;
+}
+
+.friend_bookmarks {
+	display: inline;
+	margin-left: 30px;
+}
+
+.friend_bookmarks a {
+	padding: 10px;
+    padding-left: 10px;
+	background: rgb(211, 222, 234);
+	border-radius: 20px;
+	padding-left: 15px;
+	box-shadow: 0 0 5px 0px rgb(120, 145, 174);
+}
+
+#find_friend_bookmark_indent {
+	margin-top: 50px;
+}

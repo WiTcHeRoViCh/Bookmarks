@@ -1,4 +1,6 @@
 <%= form_tag friendship_path(@current_friend), method: :get, id: 'bookmark_find_form' do %>
-	Url: <%= text_field_tag :search, params[:search] %>
-	<%= submit_tag 'Find bookmark', name: nil, id: 'find_bookmark_submit' %>
+	<%= text_field_tag :search, params[:search], placeholder: "Search" %>
+	<%= submit_tag '', name: nil, id: 'find_bookmark_submit', title: "Search" %>
 <% end %>
+
+<button id = "reset_find_bookmark_form" title="Reset"><div></div>Reset</button>

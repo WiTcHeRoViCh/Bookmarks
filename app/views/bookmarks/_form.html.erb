@@ -1,4 +1,4 @@
 <%= form_for new_bookmark, url: bookmarks_path, method: :post do |f| %>
-	Url: <%= f.text_field :url %>
-	<%= f.submit 'Add url' %>
+	<%= f.text_field :url, placeholder: "Url"  %>
+	<%= f.submit 'Add url', id: 'bookmark_submit' %>
 <% end %>

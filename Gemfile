@@ -16,10 +16,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'pry'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'screencap'
-gem 'link_thumbnailer'
+gem 'webshot'
 gem 'carrierwave'
-gem 'phantomjs', '1.9.8'
+gem 'phantomjs'
 gem "will_paginate", "~> 3.0.4" 
 gem "koala"
 

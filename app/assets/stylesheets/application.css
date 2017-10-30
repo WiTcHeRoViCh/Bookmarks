@@ -16,5 +16,87 @@
 
 
 #error_message {
-	color:red;
+	color: red;
+
+	margin: 25px 0;
+}
+
+#hide_error_messages {
+	background: #f2f2f2;
+	padding: 10px;
+	border: 1px solid #d2d2d2;
+	border-radius: 6px;
+}
+
+#error_close_btn {
+	float: right;
+	color: black;
+	border: 1px solid black;
+	border-radius: 100%;
+	padding: 2px 7px;
+	margin-top: -2px;
+	cursor: pointer;
+}
+
+body {
+	background: #F9F9F9;
+	font-family: Zapf Chancery, cursive;
+}
+
+body a {
+	text-decoration: none;
+	color: #014163;
+	font-size: 18px;
+	outline: none;
+}
+
+#top_menu_left {
+	display: initial;
+	padding: 27px;
+	margin-left: -10px;
+	border-radius: 0 0 24px 0px;
+	background: rgb(211, 222, 234);
+	padding-bottom: 15px;
+	box-shadow: 0 0 5px 0px rgb(120, 145, 174);
+	font-size: 0;
+}
+
+.top_menu_middle {
+	display: inline;
+	margin-left: 26px;
+}
+
+.top_menu_middle_link {
+	padding: 27px;
+	padding-bottom: 10px;
+	background: rgb(211, 222, 234);
+	border-radius: 0 0 26px 26px;
+	cursor: pointer;
+	color: #014163;
+	box-shadow: 0 0 5px 0px rgb(120, 145, 174);
+}
+
+.pointer {
+	background: url("/assets/pointer_2_1.png") no-repeat 50%;
+	background-size: 63px 160px;
+	color: transparent;
+	padding: 116px 0px;
+}
+
+#left_pointer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-top: 341px;
+	margin-left: 22px;
+}
+
+#right_pointer {
+	-moz-transform: rotate(180deg);
+	transform: rotate(180deg);
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-top: 341px;
+	margin-right: 22px;
 }

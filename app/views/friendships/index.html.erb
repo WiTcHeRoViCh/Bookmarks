@@ -1,9 +1,13 @@
-<p><%= link_to 'Back', bookmarks_path %></p>
+<div id="top_menu_left">
+	<%= link_to 'Back', bookmarks_path %>
+</div>
 
-<% @friends.each do |friend| %>
+<div id="friends">
+	<% @friends.each do |friend| %>
 
-	<div class="friend">
-		<%= friend.email %> <%= link_to 'Bookmarks', friendship_path(friend) %>
-	</div>
+		<div class="friend">
+			<span class="user_email"><%= friend.email %></span> <div class="friend_bookmarks"><%= link_to 'Bookmarks', friendship_path(friend) %></div>
+		</div>
 
-<% end %>
+	<% end %>
+</div>

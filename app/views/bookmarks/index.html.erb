@@ -1,24 +1,58 @@
-<%= link_to 'Logout', logout_path %> <%= link_to 'Friends', friends_path %>
+<header>
+	<div id="top_menu_left">
+		<%= link_to 'Friends', friends_path %>
+	</div>
 
-<p id = "error_message"><%= flash[:error] %></p>
+	<div class="top_menu_middle">
+		<a id="add_new_bookmark_btn" class="top_menu_middle_link">New bookmark</a>
+	</div>
 
-<%= render 'form', new_bookmark: new_bookmark %>
-<%= render 'find_bookmark_form' %>
-<button id = "reset_find_bookmark_form">Reset</button>
+	<div class="top_menu_middle">
+		<%= link_to 'Logout', logout_path, class: "top_menu_middle_link" %>
+	</div>
+</header>
 
-<div id = "bookmarks">
-	<% if @bookmarks.size.zero? %>
-		<div>No one bookmarks found!</div>
-	<% else %>
-		<% @bookmarks.each do |bookmark| %>
-
-			<div class="bookmark">
-				<div class="bookmark_url"><%= link_to bookmark.url, bookmark.url %></div>
-				<div class="bookmark_image"><%= image_tag(bookmark.preview) %></div>
-			</div>
-
-		<% end %>
-	<% end %>
+<div id="hidden_new_bookmark_form" class="unvisible">
+	<%= render 'form', new_bookmark: new_bookmark %>
 </div>
 
-<%= will_paginate @bookmarks %>
+<div id ="main_bookmarks">
+
+	<div class="horizontal_center">
+		<div id = "error_message">
+			
+			<% if flash[:error] %>
+				<div id ="hide_error_messages">
+					<%= flash[:error] %>
+					<div id="error_close_btn">X</div>
+				</div>
+			<% end %>
+
+		</div>
+	</div>
+
+
+	<div class="horizontal_center">
+		<%= render 'find_bookmark_form' %>
+	</div>
+
+	<div id = "bookmarks">
+		<% if @bookmarks.size.zero? %>
+			<div>No one bookmarks found!</div>
+		<% else %>
+			<% @bookmarks.each do |bookmark| %>
+
+				<div class="bookmark">
+					<%= link_to "", bookmark ,method: :delete, data: {confirm: "Delete this bookmark?"}, class: "delete_bookmark" %>
+					<div class="bookmark_image"><%= show_image(bookmark.preview) %></div>
+					<div class="bookmark_url"><%= link_label_without_protocol(bookmark.url) %></div>
+				</div>
+
+			<% end %>
+		<% end %>
+	</div>
+
+	<div class = "apple_pagination">
+		<%= will_paginate @bookmarks %>
+	</div>
+</div>

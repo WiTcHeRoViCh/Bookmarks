@@ -20,4 +20,22 @@ window.onload = function () {
 		document.getElementById('search').value ='';
 		document.getElementById('find_bookmark_submit').click();
 	}
+
+	new_bookmark_btn = document.getElementById('add_new_bookmark_btn')
+	hidden_bookmark_btn = document.getElementById('hidden_new_bookmark_form')
+	new_bookmark_btn.onclick = function() {
+		if (hidden_bookmark_btn.className == "visible"){
+    		hidden_bookmark_btn.className = "unvisible"
+		}
+		else {
+			hidden_bookmark_btn.className = "visible"
+		}
+	}
+
+
+	error_close_btn = document.getElementById("error_close_btn")
+	hide_error_messages = document.getElementById("hide_error_messages")
+	error_close_btn.onclick = function() {
+		hide_error_messages.style.display = "none"
+	}
 };
